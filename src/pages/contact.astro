@@ -1,0 +1,77 @@
+---
+import Layout from '@layouts/Default.astro';
+import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
+import MobileSocials from '@components/home/MobileSocials.astro';
+import { Pill } from '@eliancodes/brutal-ui';
+import { Button } from '@eliancodes/brutal-ui';
+import { Card } from '@eliancodes/brutal-ui';
+---
+
+<Layout
+    title='Contactanos'
+    pageTitle='Web Exposición | Contactanos'
+    description='Web Exposición'
+>
+  <main class='bg-pink p-6'>
+
+    <h1 class="relative mx-auto flex items-center justify-center pb-20 text-4xl">
+      Contáctanos ✨
+    </h1>
+
+    <!--
+        This is a working contact form. To receive email,
+        Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+
+        Create Access Key here 👉 https://web3forms.com/
+     -->
+
+    <section class="contact-section">
+
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input
+            type="hidden"
+            name="redirect"
+            value="https://web3forms.com/success?title=Gracias&desc=Responderemos%20pronto."
+        />
+        <input type="hidden" name="access_key" value="63b97b9f-386a-41e8-bc99-398666df7f2f" />
+        <input class="input sanchez mb-5 w-full rounded-md border border-slate-300 px-4 py-3 outline-none ring-slate-100 placeholder:text-slate-400 focus:border-slate-600 focus:ring-4" name="subject"  placeholder="Asunto" />
+        <input type="hidden" name="from_name" value="My Website" />
+        <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+
+        <div class="form-group-container">
+          <div class="form-group">
+            <input id="name" name="name" class="form-input sanchez mb-5 input w-full rounded-md border border-slate-300 px-4 py-3 outline-none ring-slate-100 placeholder:text-slate-400 focus:border-slate-600 focus:ring-4" placeholder="Tu nombre" type="text" />
+          </div>
+          <div class="form-group">
+            <input id="email" name="email" class="form-input sanchez mb-5 input w-full rounded-md border border-slate-300 px-4 py-3 outline-none ring-slate-100 placeholder:text-slate-400 focus:border-slate-600 focus:ring-4" placeholder="Tu dirección de correo electrónico" type="email" />
+          </div>
+          <div class="form-group">
+            <textarea class="form-textarea sanchez mb-5 input w-full rounded-md border border-slate-300 px-4 py-3 outline-none ring-slate-100 placeholder:text-slate-400 focus:border-slate-600 focus:ring-4" id="message" name="message" placeholder="Tu mensaje"></textarea>
+          </div>
+        </div>
+        <div class="flex justify-center">
+        <button class="brutal-btn w-auto" type="submit">Mandar mensaje</button>
+        </div>
+      </form>
+
+      <style>
+        button.brutal-btn {
+          filter: drop-shadow(5px 5px 0 rgb(0 0 0 / 1));
+          background-color: white;
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          border: 2px solid black;
+          transition: all;
+          transition-duration: 0.5s;
+          animation: ease-in-out;
+          font-family: 'Sanchez', serif;
+          cursor: pointer; /* Add cursor pointer */
+        }
+        a.brutal-btn:hover {
+          filter: drop-shadow(3px 3px 0 rgb(0 0 0 / 1));
+          background-color: var(--color);
+        }
+      </style>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,65 @@
+---
+import Layout from '@layouts/Default.astro';
+import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
+import MobileSocials from '@components/home/MobileSocials.astro';
+import {Pill} from '@eliancodes/brutal-ui';
+import {Button} from '@eliancodes/brutal-ui';
+import {Card} from '@eliancodes/brutal-ui';
+
+const builtWith = [
+    {name: 'Astro', url: 'https://astro.build/'},
+    {name: 'UnoCSS', url: 'https://uno.antfu.me/'},
+    {
+        name: 'Content Collections',
+        url: 'https://docs.astro.build/en/guides/content-collections/',
+    },
+    {name: 'RSS', url: 'https://docs.astro.build/en/guides/rss/'},
+    {
+        name: 'Sitemap',
+        url: 'https://docs.astro.build/en/guides/integrations-guide/sitemap/',
+    },
+    {name: 'Vercel', url: 'https://vercel.com'},
+    {name: 'TypeScript', url: 'https://www.typescriptlang.org/'},
+];
+---
+
+<Layout
+        title='Información'
+        pageTitle='Web Exposición | Información'
+        description='Web Exposición'
+>
+    <main class='bg-pink p-6'>
+        <MobileSocials/>
+        <section id='about' class='grid md:grid-cols-2 gap-8 mt-4'>
+            <h2 class='hidden'>About Bruta</h2>
+            <div class='col-span-4'>
+                <Card>
+                    <div class='flex justify-center responsive-iframe'>
+                        <iframe src="https://docs.google.com/presentation/d/12auY15VKRZVmdxQXr91D0zqHrOyHSQmiAZ_1iG031z4/embed?start=false&loop=false&delayms=3000" class="rounded-md"
+                                frameborder="0"
+                                allowfullscreen="true"
+                                mozallowfullscreen="true"
+                                webkitallowfullscreen="true">
+                        </iframe>
+                    </div>
+                </Card>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    .responsive-iframe {
+        position: relative;
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    }
+
+    .responsive-iframe iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
