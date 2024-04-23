@@ -5,6 +5,7 @@ import MobileSocials from '@components/home/MobileSocials.astro';
 import {Pill} from '@eliancodes/brutal-ui';
 import {Button} from '@eliancodes/brutal-ui';
 import {Card} from '@eliancodes/brutal-ui';
+import myImage from '../path/to/image.jpg'; // Add this line
 
 const builtWith = [
     {name: 'Astro', url: 'https://astro.build/'},
@@ -35,7 +36,8 @@ const builtWith = [
             <div class='col-span-4'>
                 <Card>
                     <div class='flex justify-center responsive-iframe'>
-                        <iframe src="https://docs.google.com/presentation/d/12auY15VKRZVmdxQXr91D0zqHrOyHSQmiAZ_1iG031z4/embed?start=false&loop=false&delayms=3000" class="rounded-md"
+                        <iframe src="https://docs.google.com/presentation/d/12auY15VKRZVmdxQXr91D0zqHrOyHSQmiAZ_1iG031z4/embed?start=false&loop=false&delayms=3000"
+                                class="rounded-md"
                                 frameborder="0"
                                 allowfullscreen="true"
                                 mozallowfullscreen="true"
@@ -44,11 +46,60 @@ const builtWith = [
                     </div>
                 </Card>
             </div>
+            <div class='col-span-4'> <!-- Add this block -->
+                <Card>
+                    <div class="items-center justify-center flex">
+                        <img src="../../public/icon/Logo_GUP.jpeg" alt="My Image"
+                             class="rounded-md flex justify-center"/>
+                    </div>
+                    <div class="items-center justify-center flex">
+                    <h1 class="underline flex justify-center pt sanchez"><a href="http://asociaciongup.es">http://asociaciongup.es</a></h1>
+                    </div>
+                    <p class="pt sanchez">La agencia es una de las partes de la exposición del PEP y consta de hacer
+                        algo
+                        que afecte al mundo y qué este relacionado con el tema que hemos elegido. En este caso el tema
+                        que hemos
+                        elegido es la distribuición de la riqueza que afecta al acceso de las comunidades y los
+                        individuos a la
+                        igualdad de oportunidades, hemos escogido la ONG GUP porque nuestra profesora de francés
+                        colabora con esta
+                        organización y nos la recomendó. Esta ONG ayuda a familias en Senegal y también en València y
+                        hemos
+                        colaborado con ellos para hacer una recogida de productos de higiene para las familias
+                        necesitadas de
+                        València.</p>
+                </Card>
+            </div>
         </section>
     </main>
 </Layout>
 
 <style>
+    /* Mobile styles */
+    @media only screen and (max-width: 600px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        .responsive-iframe {
+            padding-top: 75%; /* Adjust aspect ratio for mobile */
+        }
+    }
+
+    /* Tablet styles */
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* Desktop styles */
+    @media only screen and (min-width: 1025px) {
+        .grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
     .responsive-iframe {
         position: relative;
         overflow: hidden;
