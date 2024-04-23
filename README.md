@@ -118,3 +118,4 @@ If you need more from this theme, don't hesitate to open an issue or reach out t
 # web-exposicion-redesigned
 # web-exposicion-redesign
 # web-exposicion-redesign
+# web-exposicion-redesign
