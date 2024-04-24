@@ -6,13 +6,12 @@ import MobileSocials from '@components/home/MobileSocials.astro';
 import {Button} from '@eliancodes/brutal-ui';
 import {Card} from '@eliancodes/brutal-ui';
 import {Pill} from '@eliancodes/brutal-ui';
-import { RuxPopUpMenu } from '@astrouxds/rux-pop-up-menu/rux-pop-up-menu.js'
 const builtWith = [
-    {name: 'Andreu A', image:"/Andreu.jpg"},
-    {name: 'Andreu G', image:"/Andreu-García.jpg"},
-    {name: 'Pablo', image:"/Pablo-Rodriguez.jpg"},
-    {name: 'Nerea', image:"/Nerea.jpg"},
-    {name: 'Andrea', image:"/Andrea.JPG"},
+    {name: 'Andreu A'},
+    {name: 'Andreu G'},
+    {name: 'Pablo'},
+    {name: 'Nerea'},
+    {name: 'Andrea'},
 ];
 ---
 
@@ -50,7 +49,7 @@ const builtWith = [
                             builtWith.map((item) => (
                                     <li>
                                         <Pill>
-                                            <a class="sanchez" href={item.image}>{item.name}</a>
+                                            <a class="sanchez">{item.name}</a>
                                         </Pill>
                                     </li>
                             ))
