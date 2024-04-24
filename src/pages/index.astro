@@ -1,21 +1,18 @@
 ---
+// src/pages/index.astro
 import Layout from '@layouts/Default.astro';
 import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
 import MobileSocials from '@components/home/MobileSocials.astro';
-import {Pill} from '@eliancodes/brutal-ui';
 import {Button} from '@eliancodes/brutal-ui';
 import {Card} from '@eliancodes/brutal-ui';
-
+import {Pill} from '@eliancodes/brutal-ui';
+import { RuxPopUpMenu } from '@astrouxds/rux-pop-up-menu/rux-pop-up-menu.js'
 const builtWith = [
-    {name: 'Andreu A'},
-    {name: 'Andreu G'},
-    {
-        name: 'Pablo',
-    },
-    {name: 'Nerea'},
-    {
-        name: 'Andrea',
-    },
+    {name: 'Andreu A', image:"../../public/Andreu.jpg"},
+    {name: 'Andreu G', image:"../../public/Andreu-García.jpg"},
+    {name: 'Pablo', image:"../../public/Pablo-Rodriguez.jpg"},
+    {name: 'Nerea', image:"../../public/Nerea.jpg"},
+    {name: 'Andrea', image:"../../public/Andrea.JPG"},
 ];
 ---
 
@@ -53,14 +50,7 @@ const builtWith = [
                             builtWith.map((item) => (
                                     <li>
                                         <Pill>
-                                            <a
-                                                    class='sanchez'
-                                                    href={item.url}
-                                                    target='_blank'
-                                                    title={`Go to ${item.name}`}
-                                            >
-                                                {item.name}
-                                            </a>
+                                            <a class="sanchez" href={item.image}>{item.name}</a>
                                         </Pill>
                                     </li>
                             ))
